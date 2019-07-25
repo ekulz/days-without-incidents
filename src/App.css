@@ -3,7 +3,7 @@
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
+  animation: App-logo-spin infinite 10s linear;
   height: 40vmin;
   pointer-events: none;
 }
@@ -23,11 +23,19 @@
   color: #61dafb;
 }
 
+p.body-title {
+  font-style: italic;
+}
+
+p.body-days {
+  font-weight: bold;
+}
+
 @keyframes App-logo-spin {
   from {
-    transform: rotate(0deg);
-  }
+    transform: rotateY(0deg);
+  } 
   to {
-    transform: rotate(360deg);
+    transform: rotateY(360deg);
   }
 }
