@@ -4,6 +4,7 @@
     <TargetFramework>netcoreapp2.2</TargetFramework>
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
     <RootNamespace>days_without_incidents_api</RootNamespace>
+    <UserSecretsId>e2d6a790-0d95-4183-a642-7f09c26f8b3e</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
