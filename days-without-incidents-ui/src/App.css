@@ -6,29 +6,33 @@
   animation: App-logo-spin infinite 10s linear;
   height: 40vmin;
   pointer-events: none;
+  margin-bottom: 2em;
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #2C3E50;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(25px + 2vmin);
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
 }
 
 p.body-title {
   font-style: italic;
+  margin-bottom: 3em;
+}
+
+p.body-subtitle {
+  font-weight: light;
+  font-size: calc(7px + 2vmin);
 }
 
 p.body-text {
   font-weight: lighter;
+  font-size: calc(5px + 2vmin);
 }
 
 @keyframes App-logo-spin {
