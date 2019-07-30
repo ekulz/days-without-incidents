@@ -27,8 +27,8 @@ p.body-title {
   font-style: italic;
 }
 
-p.body-days {
-  font-weight: bold;
+p.body-text {
+  font-weight: lighter;
 }
 
 @keyframes App-logo-spin {

@@ -2,17 +2,19 @@ import React from 'react';
 import partypopper from './party-popper.svg';
 
 import './App.css';
+import './bootstrap.min.css';
+import IncidentDetails from './components/IncidentDetails';
 
-function App() {
+function DaysWithoutIncidents() {
   return (
     <div className="App">
       <header className="App-header">
         <img src={partypopper} className="App-logo" alt="logo" />
-        <p class="body-title">Number of days without an incident:</p>
-        <p class="body-days">9000!</p>
+        <p className="body-title">Last Incident Details:</p>
+        <IncidentDetails />
       </header>
     </div>
   );
 }
 
-export default App;
+export default DaysWithoutIncidents;
