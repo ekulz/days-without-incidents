@@ -25,6 +25,14 @@ namespace days_without_incidents_api
 
             services.AddScoped<IPagerDutyApiClient, PagerDutyApiClient>();
             services.AddScoped<IPagerDutyService, PagerDutyService>();
+
+            services.AddCors(options => options.AddPolicy("ApiCorsPolicy", builder =>
+            {
+                builder
+                    .WithOrigins("http://localhost:3000")
+                    .AllowAnyMethod()
+                    .AllowAnyHeader();
+            }));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -41,6 +49,7 @@ namespace days_without_incidents_api
             }
 
             app.UseHttpsRedirection();
+            app.UseCors("ApiCorsPolicy");
             app.UseMvc();
         }
     }
