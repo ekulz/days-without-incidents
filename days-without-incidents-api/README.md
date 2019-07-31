@@ -15,7 +15,12 @@
 dotnet user-secrets set "PagerDutyApi:ApiKey" "<pagerduty_api_key>" --project "<path_to_cloned_repo>/days-without-incidents-api"
 ```
 
-2. Build and Run the project:
+2. Trust the local self signed certificate:
+```
+dotnet dev-certs https --trust
+```
+
+3. Build and Run the project:
 
 ```
 cd <path_to_cloned_repo>/days-without-incidents-api
