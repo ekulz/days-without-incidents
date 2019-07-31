@@ -27,3 +27,13 @@ cd <path_to_cloned_repo>/days-without-incidents-api
 dotnet build
 dotnet run
 ```
+
+### Publish an image
+
+For running in a Production environment.
+
+```
+docker build -t days-without-incidents-api .
+docker run -d -e ASPNETCORE_PagerDutyApi__ApiKey='<pagerduty_api_key>' -p 8080:80 --name dayswithoutincidentsapi days-without-incidents-api
+
+```

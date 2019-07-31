@@ -7,7 +7,7 @@ function IncidentDetails() {
 
     useEffect(() => {
         axios
-            .get("https://localhost:5001/api/incidents/latest")
+            .get("http://localhost:5000/api/incidents/latest")
             .then(({ data }) => {
                 setApiDataJson(data)
             });
