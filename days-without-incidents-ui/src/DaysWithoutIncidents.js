@@ -10,17 +10,29 @@ const DaysWithoutIncidents = () => {
   const [apiDataJson, setApiDataJson] = useState(null);
 
   useEffect(() => {
+    const getIncidentData = () => {
       fetch("/api/incidents/latest")
-          .then(res => res.json())
-          .then(data => setApiDataJson(data))
+        .then(res => {
+          if (!res.ok) {
+            throw Error();
+          }
+          return res.json();
+        })
+        .then(data => setApiDataJson(data))
+        .catch(() => setApiDataJson(null))
+    };
+    getIncidentData();
+    const interval = setInterval(getIncidentData, 5000);
+
+    return () => clearInterval(interval)
   }, []);
 
   return (
     <div className="App">
       <header className="App-header">
-        <img src={partypopper} className="App-logo" alt="logo" />
         {apiDataJson ? (
           <>
+            <img src={partypopper} className="App-logo" alt="logo" />
             <IncidentsDaysAgo apiDataJson={apiDataJson} />
             <IncidentDetails apiDataJson={apiDataJson} />
           </>
@@ -30,8 +42,7 @@ const DaysWithoutIncidents = () => {
               <span className="sr-only">Loading...</span>
             </div>
           </>
-        )
-        }
+        )}
       </header>
     </div>
   );
