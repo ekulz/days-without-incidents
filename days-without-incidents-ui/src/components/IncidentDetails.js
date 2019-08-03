@@ -1,28 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
-import axios from 'axios';
-
-function IncidentDetails() {
-    const [apiDataJson, setApiDataJson] = useState(null);
-
-    useEffect(() => {
-        axios
-            .get("http://localhost:5000/api/incidents/latest")
-            .then(({ data }) => {
-                setApiDataJson(data)
-            });
-    }, []);
-
-    return apiDataJson ? (
+const IncidentDetails = React.memo(({ apiDataJson }) => {
+    return (
         <div className="incident-details">
             <p className="body-subtitle">Last Incident Details:</p>
             <p className="body-text">Incident title: {apiDataJson.title}</p>
             <p className="body-text">Incident date: {GetFormattedDate(apiDataJson.date)}</p>
         </div>
-    ) : (
-        <p className="body-subtitle">Loading...</p>
-    );
-}
+    )
+});
 
 function GetFormattedDate(date) {
     var dateTime = new Date(date);

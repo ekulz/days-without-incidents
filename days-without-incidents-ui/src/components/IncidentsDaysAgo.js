@@ -1,27 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
-import axios from 'axios';
-
-function IncidentsDaysAgo() {
-    const [apiDataJson, setApiDataJson] = useState(null);
-
-    useEffect(() => {
-        axios
-            .get("http://localhost:5000/api/incidents/latest")
-            .then(({ data }) => {
-                setApiDataJson(data)
-            });
-    }, []);
-
-    return apiDataJson ? (
+const IncidentsDaysAgo= React.memo(({ apiDataJson }) => {
+    return (
         <div className="incidents-days-ago">
             <p className="body-title">Days without incidents: {apiDataJson.daysAgo}</p>
         </div>
-    ) : (
-        <div className="incidents-days-ago">
-            <p className="body-title">Loading...</p>
-        </div>
     );
-}
+});
 
 export default IncidentsDaysAgo;
