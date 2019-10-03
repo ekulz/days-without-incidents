@@ -1,0 +1,7 @@
+FROM node:12.7 AS build-env
+COPY . .
+RUN npm run build
+
+# Build runtime image
+FROM nginx:1.17
+COPY --from=build-env build/ /usr/share/nginx/html
