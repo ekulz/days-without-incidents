@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import partypopper from './party-popper.svg';
-
 import './App.css';
 import './bootstrap.min.css';
 import IncidentDetails from './components/IncidentDetails';
 import IncidentsDaysAgo from './components/IncidentsDaysAgo';
+import { server } from './config'
 
 const DaysWithoutIncidents = () => {
   const [apiDataJson, setApiDataJson] = useState(null);
 
   useEffect(() => {
     const getIncidentData = () => {
-      fetch("/api/incidents/latest")
+      fetch(`${server}/api/incidents/latest`)
         .then(res => {
           if (!res.ok) {
             throw Error();
