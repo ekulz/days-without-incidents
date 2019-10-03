@@ -29,7 +29,9 @@ namespace days_without_incidents_api
             services.AddCors(options => options.AddPolicy("ApiCorsPolicy", builder =>
             {
                 builder
-                    .WithOrigins("http://localhost:3000")
+                    .WithOrigins(
+                        "http://localhost:3000",
+                        "https://days-without-incidents.inside.xero-support.com")
                     .AllowAnyMethod()
                     .AllowAnyHeader();
             }));
