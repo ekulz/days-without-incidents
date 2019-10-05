@@ -1,0 +1,19 @@
+name: Build and publish API image
+
+on: 
+  push:
+    branches:
+      - master
+    paths:
+      - 'days-without-incidents-api/version.txt'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1  
+    - name: build
+      env:
+        DOCKER_HUB_USERNAME: ${{ secrets.DOCKER_HUB_USERNAME }}
+        DOCKER_HUB_PASSWORD: ${{ secrets.DOCKER_HUB_PASSWORD }}
+      run: ./build/build-publish-api.sh
