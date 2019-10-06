@@ -24,7 +24,7 @@ do
     esac
 done
 
-echo "Building and publishing image for $PROJECT\n"
+echo "Building and publishing image for $PROJECT"
 
 USER=$(echo $DOCKER_HUB_USERNAME)
 PASSWORD=$(echo $DOCKER_HUB_PASSWORD)
@@ -41,20 +41,20 @@ then
     exit 1
 fi
 
-echo "\nLogging into Dockerhub..."
+echo "Logging into Dockerhub..."
 echo $PASSWORD | docker login --username $USER --password-stdin
 
 DIR="$(cd "$(dirname "$0")" && pwd)"
 VERSION=$(head -n 1 $DIR/../$PROJECT/version.txt)
 MAJOR=$($DIR/semver get major $VERSION)
 MINOR=$($DIR/semver get minor $VERSION)
-echo "\nBuilding version: $VERSION"
+echo "Building version: $VERSION"
 
-echo "\nBuilding image..."
+echo "Building image..."
 cd $DIR/../$PROJECT
 docker build -t ekulz/$PROJECT:latest . --file dockerfile
 
-echo "\nTagging image..."
+echo "Tagging image..."
 echo "Tagging with $VERSION"
 docker tag ekulz/$PROJECT:latest ekulz/$PROJECT:$VERSION
 echo "Tagging with $MAJOR.$MINOR"
@@ -62,7 +62,7 @@ docker tag ekulz/$PROJECT:latest ekulz/$PROJECT:$MAJOR.$MINOR
 echo "Tagging with $MAJOR"
 docker tag ekulz/$PROJECT:latest ekulz/$PROJECT:$MAJOR
 
-echo "\nPushing image..."
+echo "Pushing image..."
 echo "Pushing tag latest"
 docker push ekulz/$PROJECT:latest
 echo "Pushing tag $VERSION"
@@ -72,7 +72,7 @@ docker push ekulz/$PROJECT:$MAJOR.$MINOR
 echo "Pushing tag $MAJOR"
 docker push ekulz/$PROJECT:$MAJOR
 
-echo "\nLogging out of Dockerhub..."
+echo "Logging out of Dockerhub..."
 docker logout
 
-echo "\nSuccess!"
+echo "Success!"
