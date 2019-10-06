@@ -1,11 +1,11 @@
-name: Build and Publish API Image
+name: Build and Publish UI Image
 
 on: 
   push:
     branches:
       - master
     paths:
-      - 'days-without-incidents-api/version.txt'
+      - 'days-without-incidents-ui/version.txt'
 
 jobs:
   build:
@@ -16,4 +16,4 @@ jobs:
       env:
         DOCKER_HUB_USERNAME: ${{ secrets.DOCKER_HUB_USERNAME }}
         DOCKER_HUB_PASSWORD: ${{ secrets.DOCKER_HUB_PASSWORD }}
-      run: ./build/build-publish-image.sh --project days-without-incidents-api
+      run: ./build/build-publish-image.sh --project days-without-incidents-ui

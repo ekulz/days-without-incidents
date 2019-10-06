@@ -1,6 +1,7 @@
 # Days Without Incidents
 
-![](https://github.com/ekulz/days-without-incidents/workflows/Build%20and%20publish%20API%20image/badge.svg)
+![](https://github.com/ekulz/days-without-incidents/workflows/Build%20and%20Publish%20API%20Image/badge.svg)
+![](https://github.com/ekulz/days-without-incidents/workflows/Build%20and%20Publish%20UI%20Image/badge.svg)
 
 ![](/image.png)
 
