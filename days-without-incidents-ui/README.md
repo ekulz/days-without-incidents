@@ -9,7 +9,14 @@
 
 
 ### `npm install`
-Installs dependencies.
+
+Installs dependencies (required).
+
+### `npm run mocks`
+
+Runs mock data in place of the real API. Enables running frontend without depending on the back end.<br>
+Edit the `mocks/data.json` file, and the mock server will automatically refresh.<br>
+Run this command in a separate terminal window.
 
 ### `npm start`
 
