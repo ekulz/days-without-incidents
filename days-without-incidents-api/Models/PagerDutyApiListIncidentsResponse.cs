@@ -13,6 +13,9 @@ namespace days_without_incidents_api.Models
 
             [JsonProperty("created_at")]
             public DateTime CreatedAt { get; set; }
+
+            [JsonProperty("status")]
+            public string Status { get; set; }
         }
 
         [JsonProperty("incidents")]

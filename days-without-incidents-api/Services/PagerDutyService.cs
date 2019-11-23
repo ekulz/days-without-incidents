@@ -24,7 +24,7 @@ namespace days_without_incidents_api.Services
             {
                 var latest = incidentResponse.Incidents.OrderByDescending(i => i.CreatedAt).First();
                 var daysSinceLatest = (DateTime.UtcNow - latest.CreatedAt).Days;
-                pagerDutyIncident = new PagerDutyLatestIncident(latest.Title, latest.CreatedAt, daysSinceLatest);
+                pagerDutyIncident = new PagerDutyLatestIncident(latest.Title, latest.CreatedAt, daysSinceLatest, latest.Status);
             }
 
             return pagerDutyIncident;
