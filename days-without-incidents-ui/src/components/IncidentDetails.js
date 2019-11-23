@@ -1,9 +1,13 @@
 import React from 'react';
 
 const IncidentDetails = React.memo(({ apiDataJson }) => {
+    const subtitle = (apiDataJson.status === "resolved")
+        ? "Last Incident Details:"
+        : "Current Incident Details:"
+        
     return (
         <div className="incident-details">
-            <p className="body-subtitle">Last Incident Details:</p>
+            <p className="body-subtitle">{subtitle}</p>
             <p className="body-text">Incident title: {apiDataJson.title}</p>
             <p className="body-text">Incident date: {GetFormattedDate(apiDataJson.date)}</p>
         </div>
