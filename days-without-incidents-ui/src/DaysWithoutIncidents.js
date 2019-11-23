@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import partypopper from './party-popper.svg';
 import './App.css';
 import './bootstrap.min.css';
+import IncidentImage from './components/IncidentImage';
 import IncidentDetails from './components/IncidentDetails';
 import IncidentsDaysAgo from './components/IncidentsDaysAgo';
 import { server } from './config'
@@ -32,7 +32,7 @@ const DaysWithoutIncidents = () => {
       <header className="App-header">
         {apiDataJson ? (
           <>
-            <img src={partypopper} className="App-logo" alt="logo" />
+            <IncidentImage apiDataJson={apiDataJson} />
             <IncidentsDaysAgo apiDataJson={apiDataJson} />
             <IncidentDetails apiDataJson={apiDataJson} />
           </>
