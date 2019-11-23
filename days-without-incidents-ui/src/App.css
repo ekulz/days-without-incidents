@@ -9,6 +9,13 @@
   margin-bottom: 2em;
 }
 
+.App-logo-spin-circular {
+  animation: App-logo-spin-circular infinite 10s linear;
+  height: 40vmin;
+  pointer-events: none;
+  margin-bottom: 2em;
+}
+
 .App-header {
   background-color: #2C3E50;
   min-height: 100vh;
@@ -41,5 +48,14 @@ p.body-text {
   } 
   to {
     transform: rotateY(360deg);
+  }
+}
+
+@keyframes App-logo-spin-circular {
+  from {
+    transform: rotate(0deg);
+  } 
+  to {
+    transform: rotate(360deg);
   }
 }

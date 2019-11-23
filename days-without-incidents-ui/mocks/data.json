@@ -2,6 +2,7 @@
     "latest": {
         "title": "Production Critical > Lorem ipsum worker failing to process events",
         "date": "2019-11-21T03:27:21Z",
-        "daysAgo": 1
+        "daysAgo": 1,
+        "status": "resolved"
     }
 }
